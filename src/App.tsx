@@ -90,6 +90,7 @@ const PRODUCTS = [
 
 const formatPrice = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 const WHATSAPP_NUMBER = "6281370380333";
+const INSTAGRAM_URL = "https://www.instagram.com/gomucookies?utm_source=qr&igsh=MWx3bDY1andpY3c1NQ==";
 
 type CartItem = { productId: number; quantity: number };
 type Page = "home" | "checkout";
@@ -705,7 +706,9 @@ function ContactSection() {
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <motion.a
-            href="#"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-br from-pink-500 to-yellow-400 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-shadow duration-300 hover:shadow-md"
@@ -1128,7 +1131,7 @@ function Footer() {
 
           <div className="flex items-center gap-3">
             {[
-              { icon: InstagramIcon, label: "Instagram", href: "#" },
+              { icon: InstagramIcon, label: "Instagram", href: INSTAGRAM_URL },
               { icon: Music, label: "TikTok", href: "#" },
               { icon: MessageCircle, label: "WhatsApp", href: `https://wa.me/${WHATSAPP_NUMBER}` }
             ].map(({ icon: Icon, label, href }) => (
